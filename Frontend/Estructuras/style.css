@@ -17,7 +17,7 @@ body{
     font-family: 'Quicksand', sans-serif;
     background-color: var(--primary-color);
     height: 100%;
-    background-image: url(./Imagenes/Fondo.jpg);
+    background-image: url(./Imagenes/Fondo2.jpg);
     background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -27,11 +27,6 @@ main{
     align-items: center;
     justify-content: center;
     height: 90%;
-}
-footer{
-    position: absolute;
-    margin-top: 7rem;
-    color: var(--secondary-color);
 }
 .label{
     margin-left: .5rem;
@@ -51,47 +46,22 @@ footer{
 .contenedor h1{
     text-align: center;
 }
-.form{
-    display: flex;
-    flex-direction: column;
-}
-.form a{
-    font-size: var(--sm);
-    text-align: center;
-    text-decoration: none;
-    margin-bottom: 52px;
-}
-.input{
-    border: none;
-    border-radius: 8px;
-    height: 30px;
-    font-size: var(--md);
-    padding: 4px;
-}
-.input-name{
-    width: auto;
-    margin-bottom: 22px;
-}
-.input-email{
-    width: auto;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    margin-bottom: 22px;
-}
-.input-pass{
-    width: auto;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    margin-bottom: 22px;
-}
-.primary-button{
-    background-color: var(--fourth-color);
+.secondary-button{
+    background-color: var(--secondary-color);
     border-radius: 8px;
     border: none;
     color: var(--primary-color);
-    width: 100%;
+    width: 30%;
     cursor: pointer;
     font-size: var(--md);
     font-weight: bold;
     height: 50px;
+    margin-left: 1rem;
+}
+.tabla{
+    display: flex;
+    margin-top: 1rem;
+}
+.tabla tr{
+    padding-left: 1rem;
 }

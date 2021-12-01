@@ -4,18 +4,25 @@
   "description": "Proyecto Final Tecnologias para la web",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack serve --open",
+    "build": "webpack --mode production"
   },
   "keywords": [
     "React",
     "js",
-    "servlets"
+    "servlet"
   ],
   "author": "Christian Vega <christian990116@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "css-loader": "^6.5.1",
+    "mini-css-extract-plugin": "^2.4.5",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "sass": "^1.44.0",
+    "sass-loader": "^12.3.0",
+    "style-loader": "^3.3.1"
   },
   "dependencies": {
     "@babel/core": "^7.16.0",

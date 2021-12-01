@@ -1,0 +1,18 @@
+@import url('vars');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap');
+
+
+body{
+    font-family: 'Quicksand', sans-serif;
+    height: 100%;
+}
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90%;
+}
+footer{
+    position: absolute;
+    margin-top: 7rem;
+}

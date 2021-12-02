@@ -16,7 +16,7 @@ module.exports={
             '@components': path.resolve(__dirname,'src/components/'),
             '@containers': path.resolve(__dirname,'src/containers/'),
             '@pages': path.resolve(__dirname,'src/pages/'),
-            '@images': path.resolve(__dirname,'src/assets/images/'),
+            '@logos': path.resolve(__dirname,'src/assets/logos/'),
             '@icons': path.resolve(__dirname,'src/assets/icons/'),
             '@styles': path.resolve(__dirname,'src/styles/')
 
@@ -62,4 +62,7 @@ module.exports={
             filename: '[name].css'
         }),
     ],
+    devServer:{
+        historyApiFallback: true,
+    }
 }

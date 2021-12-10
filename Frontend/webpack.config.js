@@ -7,7 +7,6 @@ module.exports={
     output: {
         path: path.resolve(__dirname,'dist'),
         filename: 'bundle.js',
-        publicPath: '/',
     },
     mode: 'development',
     resolve:{
@@ -16,10 +15,8 @@ module.exports={
             '@components': path.resolve(__dirname,'src/components/'),
             '@containers': path.resolve(__dirname,'src/containers/'),
             '@pages': path.resolve(__dirname,'src/pages/'),
-            '@logos': path.resolve(__dirname,'src/assets/logos/'),
-            '@icons': path.resolve(__dirname,'src/assets/icons/'),
-            '@styles': path.resolve(__dirname,'src/styles/')
-
+            '@styles': path.resolve(__dirname,'src/styles/'),
+            '@images': path.resolve(__dirname,'src/assets/images/'),
         }
     },
     module:{
@@ -32,14 +29,6 @@ module.exports={
                 }
             },
             {
-                test: /\.html$/,
-                use: [
-                    {
-                        loader: 'html-loader'
-                    }
-                ]
-            },
-            {
                 test: /\.(css|scss$)/,
                 use: [
                     "style-loader",
@@ -49,7 +38,10 @@ module.exports={
             },
             {
                 test: /\.(png|svg|jpg|gif)$/,
-                type: 'asset'
+                loader: "file-loader",
+                options: {
+                name: "static/media/[name].[hash:8].[ext]",
+                }
             }
         ]
     },

@@ -3,16 +3,17 @@ import { Box, ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter, Switch, Route} from 'react-router-dom';
 import Layout from "@containers/Layout";
 import Login from "@pages/Login";
-import Home from "../pages/Home";
+import Home from "@pages/Home";
 import SeeQuestion from "@pages/SeeQuestion";
 import QuestionForm from "@pages/QuestionForm";
+import Game from "@pages/Game";
 
 
 const App = () => {
     return (
         <ChakraProvider>
             <Box width="70vw" margin="0 auto" paddingTop="10">
-                <BrowserRouter basename='2CV13ID6IDP4'>
+                <BrowserRouter basename='2CV13ID6IDPF'>
                     <Switch>
                         <Layout>
                             <Route exact path="/">
@@ -33,6 +34,10 @@ const App = () => {
 
                             <Route exact path="/modify">
                                 <QuestionForm />
+                            </Route>
+
+                            <Route exact path="/game">
+                                <Game />
                             </Route>
 
                             <Route path="*" render={()=> 

@@ -15,7 +15,7 @@ const SeeQuestion = () => {
 
     const getCurrentLevel = async () => {
         await axios
-            .get(`http://localhost:8080/2CV13ID6IDP4/Ejercicios?id=${id}`)
+            .get(`http://localhost:8080/2CV13ID6IDPF/Ejercicios?id=${id}`)
             .then((res) => {
                 setLevelData(res.data[0]);
             })
@@ -37,20 +37,20 @@ const SeeQuestion = () => {
             ) : (
                 <>
                     <Text fontWeight="bold" fontSize="3xl">
-                        Ecuación de la forma Y = mx + b
+                        El programa calcula el valor a pagar por cierto producto
                     </Text>
                     <Stack spacing={3}>
                         <Box>
                             <Text fontWeight="bold" fontSize="lg">
-                                Numerador de m
+                                Producto de la tienda
                             </Text>
-                            <Text>{levelData.numeradorM}</Text>
+                            <Text>{levelData.producto}</Text>
                         </Box>
                         <Box>
                             <Text fontWeight="bold" fontSize="lg">
-                                Denominador de m
+                                Valor unitario
                             </Text>
-                            <Text>{levelData.denominadorM}</Text>
+                            <Text>{levelData.moneda}</Text>
                         </Box>
                         <Box>
                             <Text fontWeight="bold" fontSize="lg">
@@ -64,9 +64,9 @@ const SeeQuestion = () => {
                             borderRadius={"1rem"}
                         >
                             <Text fontWeight="bold" fontSize="xl">
-                                Ecuación
+                                Total a pagar
                             </Text>
-                            <Text fontSize="xl">{`Y = (${levelData.numeradorM}/${levelData.denominadorM})x + ${levelData.b}`}</Text>
+                            <Text fontSize="xl">{`(${levelData.producto}*${levelData.moneda}) = ${levelData.b}`}</Text>
                         </Box>
                     </Stack>
                 </>

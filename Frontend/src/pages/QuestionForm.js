@@ -14,24 +14,24 @@ const QuestionForm = () => {
     const id = new URLSearchParams(window.location.search).get("id");
 
     const [formData, setFormData] = useState({
-        numeradorM: 1,
-        denominadorM: 1,
+        producto: 1,
+        moneda: 1,
         b: 1,
     });
 
-    const { numeradorM, denominadorM, b } = formData;
+    const { producto, moneda, b } = formData;
 
     const submitForm = (e) => {
         console.log(formData);
         e.preventDefault();
         let url = "";
-        const formFields = `numeradorM=${numeradorM}&&denominadorM=${denominadorM}&&b=${b}`;
+        const formFields = `producto=${producto}&&moneda=${moneda}&&b=${b}`;
 
         // Si hay un id en el url, irá a la ruta Update
         // sino, se trata de una nueva pregunta e ira a la ruta Create.
         !id
-            ? (url = `http://localhost:8080/2CV13ID6IDP4/Create?${formFields}`)
-            : (url = `http://localhost:8080/2CV13ID6IDP4/Update?${formFields}&id=${id}`);
+            ? (url = `http://localhost:8080/2CV13ID6IDPF/Create?${formFields}`)
+            : (url = `http://localhost:8080/2CV13ID6IDPF/Update?${formFields}&id=${id}`);
 
         axios
             .get(url)
@@ -58,21 +58,21 @@ const QuestionForm = () => {
             <Text fontSize="xl">Es necesario llenar todos los campos.</Text>
             <form onSubmit={submitForm} encType="multipart/form-data">
                 <Text fontWeight="bold" fontSize="xl">
-                    Ingrese los datos de Y = mx + b
+                    Ingrese los datos de la cantidad de productos y el valor unitario
                 </Text>
                 <Stack spacing={3}>
-                    <FormLabel>Numerador de m</FormLabel>
+                    <FormLabel>Producto de la tienda</FormLabel>
                     <NumberInput
                         isRequired={true}
                         onChange={(val) => {
                             setFormData({
                                 ...formData,
-                                numeradorM: val,
+                                producto: val,
                             });
                         }}
-                        defaultValue={numeradorM}
-                        min={-10}
-                        max={10}
+                        defaultValue={producto}
+                        min={0}
+                        max={20}
                     >
                         <NumberInputField />
                         <NumberInputStepper>
@@ -81,18 +81,18 @@ const QuestionForm = () => {
                             <NumberDecrementStepper />
                         </NumberInputStepper>
                     </NumberInput>
-                    <FormLabel>Denominador de m</FormLabel>
+                    <FormLabel>Valor unitario</FormLabel>
                     <NumberInput
                         isRequired={true}
                         onChange={(val) => {
                             setFormData({
                                 ...formData,
-                                denominadorM: val,
+                                moneda: val,
                             });
                         }}
-                        defaultValue={denominadorM}
-                        min={-10}
-                        max={10}
+                        defaultValue={moneda}
+                        min={0}
+                        max={20}
                     >
                         <NumberInputField />
                         <NumberInputStepper>
@@ -100,7 +100,7 @@ const QuestionForm = () => {
                             <NumberDecrementStepper />
                         </NumberInputStepper>
                     </NumberInput>
-                    <FormLabel>Valor de b</FormLabel>
+                    <FormLabel>Total</FormLabel>
                     <NumberInput
                         isRequired={true}
                         onChange={(val) => {
@@ -110,8 +110,8 @@ const QuestionForm = () => {
                             });
                         }}
                         defaultValue={b}
-                        min={-10}
-                        max={10}
+                        min={0}
+                        max={2000}
                     >
                         <NumberInputField />
                         <NumberInputStepper>

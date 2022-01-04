@@ -23,7 +23,7 @@ const Home = () => {
 
     const getlevels = async () => {
         await axios
-            .get("http://localhost:8080/2CV13ID6IDP4/Ejercicios")
+            .get("http://localhost:8080/2CV13ID6IDPF/Ejercicios")
             .then((res) => {
                 setLevels(res.data);
             })
@@ -34,7 +34,7 @@ const Home = () => {
 
     const deleteQuestion = (id) => {
         alert(`La pregunta ${id} será eliminada.`);
-        let url = `http://localhost:8080/2CV13ID6IDP4/Delete?id=${id}`;
+        let url = `http://localhost:8080/2CV13ID6IDPF/Delete?id=${id}`;
         axios
             .get(url)
             .then(() => {
@@ -49,7 +49,7 @@ const Home = () => {
     return (
         <>
             <Text fontSize="6xl" align="center">
-                Line Game
+                Proportion Playground
             </Text>
             <Link to="new">
                 <Button colorScheme="blue">Crear nuevo nivel del juego</Button>
